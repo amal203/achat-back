@@ -18,7 +18,7 @@ agent:any
         
             url:'https://github.com/amal203/achat-back.git'
 		  }
-		
+		}
 		
 		
 		
