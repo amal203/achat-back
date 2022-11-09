@@ -20,6 +20,19 @@ agent any
 		  }
 		}
 		
+		stage('Integration testing'){
+		steps{
+			sh'mvn verify -DskipUnitTests'
+              
+		  }
+		}
+		
+		stage('Maven Build'){
+		steps{
+			sh'mvn clean install'
+              
+		  }
+		}
 		
 		
 		
