@@ -12,26 +12,14 @@ agent any
 		}
 		
 		
-		stage('Unit Testing'){
+		stage('UNIT Testing'){
 		steps{
 			sh'mvn test'
               
 		  }
 		}
 		
-		stage('Integration Testing'){
-		steps{
-			sh'mvn verify -DskipUnitTests'
-              
-		  }
-		}
 		
-		stage('Maven Build'){
-		steps{
-			sh'mvn clean install'
-              
-		  }
-		}
 		
 		
 		
