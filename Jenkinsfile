@@ -1,7 +1,9 @@
 pipeline{
 agent any
 	stages{
-		
+		tools{
+		maven 'Maven 4.0.0'
+		}
 		  stage('Git Checkout'){
 		steps{
             echo ('Getting project from git');
