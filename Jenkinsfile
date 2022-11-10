@@ -36,8 +36,9 @@ agent any
 		
 		stage("build & SonarQube analysis") {
             agent any
-            steps {
             def scannerHome= tool 'sonarqube';
+            steps {
+            
               withSonarQubeEnv(sonarqube) {
                 sh 'mvn clean package sonar:sonar'
               }
