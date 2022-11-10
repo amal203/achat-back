@@ -34,13 +34,14 @@ agent any
 		  }
 		}
 		
-		stage('build & SonarQube analysis') {
+		stage('SonarQube analysis') {
             agent any
-            def scannerHome= tool 'sonarqube';
-            steps {
             
-              withSonarQubeEnv(sonarqube) {
+            steps {
+            script{
+              withSonarQubeEnv('sonarserver') {
                 sh 'mvn clean package sonar:sonar'
+              }
               }
             }
           }
