@@ -101,6 +101,17 @@ pipeline{
             }
         }
 		
+		 stage ('Build our image'){
+            steps{
+                sh 'sudo docker build --build-arg IP=0.0.0.0 -t amalbenromdhane/achat_back .'
+            }
+        }
+        stage ('Deploy our image'){
+            steps{
+                sh 'sudo docker login -u amalbenromdhane -p amalbenromdhane123';
+                sh 'sudo docker push amalbenromdhane/achat_back'
+                }
+            }
 		
 		
 		}
