@@ -39,7 +39,7 @@ agent any
             
             steps {
             script{
-              withSonarQubeEnv('sonarserver') {
+              withSonarQubeEnv('credentialsId:'sonar-api') {
                 sh 'mvn clean package sonar:sonar'
               }
               }
