@@ -34,7 +34,7 @@ agent any
 		  }
 		}
 		
-		stage("build & SonarQube analysis") {
+		stage('build & SonarQube analysis') {
             agent any
             def scannerHome= tool 'sonarqube';
             steps {
